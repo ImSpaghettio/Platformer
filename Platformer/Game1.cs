@@ -8,6 +8,7 @@ namespace Platformer
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        ScreenManager screenManager = new ScreenManager();
 
         public Game1()
         {
@@ -24,7 +25,7 @@ namespace Platformer
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            screenManager.Initialize();
             base.Initialize();
         }
 
@@ -36,7 +37,7 @@ namespace Platformer
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            screenManager.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -60,7 +61,7 @@ namespace Platformer
                 Exit();
 
             // TODO: Add your update logic here
-
+            screenManager.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -73,7 +74,7 @@ namespace Platformer
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            screenManager.Draw(spriteBatch);
             base.Draw(gameTime);
         }
     }

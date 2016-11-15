@@ -1,23 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Platformer
 {
-    public class ScreenManager
+    public class ScreenManager //Manages what screen is showing
     {
-        Screen screen;
+        Screen screen; //enum switches screen between title and game screen
 
         public void Initialize()
         {
             screen = Screen.TitleScreen;
         }
 
-        public void LoadContent()
+        public void LoadContent(ContentManager Content)
         {
-            switch (screen)
+            
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            switch (screen) //Updates the screen based on Screen
             {
                 case Screen.TitleScreen:
                     break;
@@ -26,16 +29,20 @@ namespace Platformer
                 case Screen.LoadingScreen:
                     break;
             }
-        }
-
-        public void Update()
-        {
 
         }
 
-        public void Draw()
+        public void Draw(SpriteBatch spriteBatch)
         {
-
+            switch (screen) //Draws the screen based on Screen
+            {
+                case Screen.TitleScreen:
+                    break;
+                case Screen.GameScreen:
+                    break;
+                case Screen.LoadingScreen:
+                    break;
+            }
         }
     }
 }

@@ -38,8 +38,14 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Character Files\Character.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="GameScreen.cs" />
+    <Compile Include="Map Files\Map.cs" />
+    <Compile Include="Map Files\MapLoader.cs" />
+    <Compile Include="Program.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screen.cs" />
     <Compile Include="ScreenManager.cs" />
