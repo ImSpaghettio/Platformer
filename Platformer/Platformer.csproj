@@ -43,6 +43,7 @@
     <Compile Include="Game Files\GameScreen.cs" />
     <Compile Include="Map Files\Map.cs" />
     <Compile Include="Map Files\MapLoader.cs" />
+    <Compile Include="Map Files\Tile.cs" />
     <Compile Include="Program.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
