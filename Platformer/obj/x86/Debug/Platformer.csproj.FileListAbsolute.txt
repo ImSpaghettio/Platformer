@@ -23,3 +23,7 @@ C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Sharp
 C:\Users\Alex\Documents\GitHub\Platformer\Platformer\obj\x86\Debug\Platformer.csprojResolveAssemblyReference.cache
 C:\Users\Alex\Documents\GitHub\Platformer\Platformer\obj\x86\Debug\Platformer.exe
 C:\Users\Alex\Documents\GitHub\Platformer\Platformer\obj\x86\Debug\Platformer.pdb
+C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Program.cs
+C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Grass.xnb
+C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Grass.png
+C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Maps\Map1.map

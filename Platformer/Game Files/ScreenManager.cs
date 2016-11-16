@@ -7,15 +7,17 @@ namespace Platformer
     public class ScreenManager //Manages what screen is showing
     {
         Screen screen; //enum switches screen between title and game screen
+        Map map = new Map();
 
         public void Initialize()
         {
-            screen = Screen.TitleScreen;
+            screen = Screen.GameScreen;
+            map.Initialize();
         }
 
         public void LoadContent(ContentManager Content)
         {
-            
+            map.LoadContent(Content);
         }
 
         public void Update(GameTime gameTime)
@@ -25,6 +27,7 @@ namespace Platformer
                 case Screen.TitleScreen:
                     break;
                 case Screen.GameScreen:
+                    map.Update(gameTime);
                     break;
                 case Screen.LoadingScreen:
                     break;
@@ -39,6 +42,7 @@ namespace Platformer
                 case Screen.TitleScreen:
                     break;
                 case Screen.GameScreen:
+                    map.Draw(spriteBatch);
                     break;
                 case Screen.LoadingScreen:
                     break;
