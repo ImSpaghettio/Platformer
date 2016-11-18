@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 
@@ -10,13 +11,38 @@ namespace Platformer
     {
         public Texture2D Grass, Dirt, Brick;
 
-        public int DimensionX;
+        private int dimensionX;
+        private int dimensionY;
 
-        public int DimensionY;
-
-        public Tile[,] LoadMap(string Path)
+        public int DimensionX
         {
-            Tile[,] map;
+            get
+            {
+                return dimensionX;
+            }
+
+            private set
+            {
+                dimensionX = value;
+            }
+        }
+
+        public int DimensionY
+        {
+            get
+            {
+                return dimensionY;
+            }
+
+            private set
+            {
+                dimensionY = value;
+            }
+        }
+
+        public List<List<Tile>> LoadMap(string Path)
+        {
+            List<List<Tile>> map2 = new List<List<Tile>>();
             string line;
             string[] lineArray;
 
@@ -25,18 +51,20 @@ namespace Platformer
             lineArray = line.Split(',');
             DimensionX = int.Parse(lineArray[0]);
             DimensionY = int.Parse(lineArray[1]);
-            map = new Tile[DimensionX, DimensionY];
             for (int row = 0; row < DimensionY; row++) //turns the text file into a 2-D array (map)
             {
                 line = reader.ReadLine();
                 lineArray = line.Split(',');
+                List<Tile> rows = new List<Tile>();
                 for (int col = 0; col < DimensionX; col++)
                 {
-                    map[col, row] = SetTiles(int.Parse(lineArray[col]));
+                    rows.Add(SetTiles(int.Parse(lineArray[col])));
                 }
+
+                map2.Add(rows);
             }
 
-            return map; //returns the 2-D array (map)
+            return map2; //returns the 2-D array (map)
         }
 
         public void LoadTextures(ContentManager Content)
@@ -51,7 +79,7 @@ namespace Platformer
             switch (type)
             {
                 case 1:
-                    currentTile.image = Grass;
+                    currentTile.Image = Grass;
                     currentTile.currentState = State.Solid;
                     currentTile.Name = "Grass";
                     break;
