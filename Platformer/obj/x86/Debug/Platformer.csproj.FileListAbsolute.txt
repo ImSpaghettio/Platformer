@@ -26,3 +26,7 @@ C:\Users\Alex\Documents\GitHub\Platformer\Platformer\obj\x86\Debug\Platformer.pd
 C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Program.cs
 C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Grass.xnb
 C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Grass.png
+C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Character Left.xnb
+C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Character Right.xnb
+C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Character Left.png
+C:\Users\Alex\Documents\GitHub\Platformer\Platformer\bin\Windows\x86\Debug\Content\Character Right.png

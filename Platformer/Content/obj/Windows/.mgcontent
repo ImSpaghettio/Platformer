@@ -5,5 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/Alex/Documents/GitHub/Platformer/Platformer/Content/Grass.png</File>
+    <File>C:/Users/Alex/Documents/GitHub/Platformer/Platformer/Content/Character Left.png</File>
+    <File>C:/Users/Alex/Documents/GitHub/Platformer/Platformer/Content/Character Right.png</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -10,7 +10,7 @@ namespace Platformer
     public class MapLoader
     {
         public Texture2D Grass, Dirt, Brick;
-
+        
         private int dimensionX;
         private int dimensionY;
 

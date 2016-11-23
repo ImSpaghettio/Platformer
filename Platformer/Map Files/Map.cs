@@ -69,7 +69,7 @@ namespace Platformer
             {               
                 foreach (Tile b in c)
                 {
-                    b.DisplayTile(new Vector2(col * SCALE * 16,row  * SCALE * 16), spriteBatch, Color.White, SCALE);
+                    b.DisplayTile(new Vector2(col * SCALE * 16,row  * SCALE * 16), spriteBatch, Color.Red, SCALE);
                     col++;
                 }
                 col = 0;
