@@ -12,8 +12,7 @@ namespace Platformer
 
         public bool isTransitioning;
         private int dimensionX, dimensionY = 0;
-        Tile[,] currentTile;
-        List<List<Tile>> CurrentTile = new List<List<Tile>>();
+        List<List<Tile>> CurrentTile, NextTile, PrevTile;
 
         public bool isLoaded;
 
@@ -34,7 +33,7 @@ namespace Platformer
         {
             if (!isLoaded)
             {
-                CurrentTile = mapLoader.LoadMap("C:/Users/Alex/Documents/GitHub/Platformer/Platformer/Content/Maps/Map1.map");
+                CurrentTile = mapLoader.LoadMap("C:/Users/Alex/Documents/GitHub/Platformer/Platformer/Content/Maps/Map1.txt");
                 isLoaded = true;
             }
 
@@ -50,20 +49,19 @@ namespace Platformer
             
         }
 
+        public void Transition(bool i)
+        {
+            if (i)
+            {
+                isLoaded = false;
+                PrevTile = CurrentTile;
+                CurrentTile = NextTile;
+                NextTile = mapLoader.LoadMap("");
+            }
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            /*
-            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.PointClamp,
-            DepthStencilState.Default, RasterizerState.CullNone);
-            for (int i = 0; i < dimensionY; i++)
-            {
-                for (int j = 0; j < dimensionX; j++)
-                {
-                    currentTile[j, i].DisplayTile(new Vector2(j* SCALE*16,i*SCALE*16), spriteBatch, Color.White, SCALE);
-                }
-            }
-            spriteBatch.End();
-            */
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.PointClamp,
             DepthStencilState.Default, RasterizerState.CullNone);
             int row = 0, col = 0;
@@ -78,7 +76,7 @@ namespace Platformer
                 row++;
             }
 
-            spriteBatch.End();
+            spriteBatch.End(); 
         }
     }
 }

@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platformer.Character_Files
+namespace Platformer
 {
-    public class Character
+    public class Map1Data : MapData
     {
-
+        public void Event()
+        {
+            
+        }
     }
 }

@@ -42,6 +42,8 @@
     <Compile Include="Game Files\Game1.cs" />
     <Compile Include="Game Files\GameScreen.cs" />
     <Compile Include="Map Files\Map.cs" />
+    <Compile Include="Map Files\Map1Data.cs" />
+    <Compile Include="Map Files\MapData.cs" />
     <Compile Include="Map Files\MapLoader.cs" />
     <Compile Include="State.cs" />
     <Compile Include="Tile.cs" />
@@ -60,19 +62,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Character\Character Left.png" />
+    <Content Include="Content\Character\Character Right.png" />
     <Content Include="Content\Grass.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Maps\Map1.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Content\Maps\Map1.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
