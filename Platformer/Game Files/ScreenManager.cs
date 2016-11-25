@@ -8,16 +8,19 @@ namespace Platformer
     {
         Screen screen; //enum switches screen between title and game screen
         Map map = new Map();
+        Character character = new Character();
 
         public void Initialize()
         {
             screen = Screen.GameScreen;
             map.Initialize();
+            character.Initialize();
         }
 
         public void LoadContent(ContentManager Content)
         {
             map.LoadContent(Content);
+            character.LoadContent(Content);
         }
 
         public void Update(GameTime gameTime)
@@ -28,6 +31,7 @@ namespace Platformer
                     break;
                 case Screen.GameScreen:
                     map.Update(gameTime);
+                    character.Update(gameTime);
                     break;
                 case Screen.LoadingScreen:
                     break;
@@ -43,6 +47,7 @@ namespace Platformer
                     break;
                 case Screen.GameScreen:
                     map.Draw(spriteBatch);
+                    character.Draw(spriteBatch);
                     break;
                 case Screen.LoadingScreen:
                     break;

@@ -13,6 +13,7 @@ namespace Platformer
         private int charXMax, charYMax, charXMin, charYMin;
         private bool isJumping;
         private float velocity, gravity;
+        private float moveSpeed = 100;
 
         public override void Initialize()
         {
@@ -24,8 +25,9 @@ namespace Platformer
 
         public override void LoadContent(ContentManager Content)
         {
-            I_Character[0] = Content.Load<Texture2D>("Character/Character Left.png");
-            I_Character[1] = Content.Load<Texture2D>("Character/Character Right.png");
+            I_Character[0] = Content.Load<Texture2D>("Character Left.png");
+            I_Character[1] = Content.Load<Texture2D>("Character Right.png");
+            gravity = 1;
             currentChar = I_Character[0];
             base.LoadContent(Content);
         }
@@ -34,9 +36,25 @@ namespace Platformer
         {
             input.GetInput();
 
-            if (input.SpaceSing)
+            if (input.SpaceSing && !isJumping)
             {
                 velocity = -10;
+                isJumping = true;
+            }
+
+            if (isJumping)
+            {
+                Jump();
+            }
+
+            if (input.A)
+            {
+                WalkLeft(gameTime);
+            }
+
+            if (input.D)
+            {
+                WalkRight(gameTime);
             }
 
             base.Update(gameTime);
@@ -57,14 +75,16 @@ namespace Platformer
             charPos.Y += velocity;
         }
 
-        private void WalkLeft()
+        private void WalkLeft(GameTime gameTime)
         {
-
+            charPos.X -= moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            currentChar = I_Character[0];
         }
 
-        private void WalkRight()
+        private void WalkRight(GameTime gameTime)
         {
-
+            charPos.X += moveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            currentChar = I_Character[1];
         }
 
         private bool CheckDown()
