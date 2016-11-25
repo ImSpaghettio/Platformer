@@ -36,6 +36,21 @@ namespace Platformer
         {
             input.GetInput();
 
+            charXMin = (int)charPos.X;
+            charYMin = (int)charPos.Y;
+            charXMax = (int)(charPos.X + currentChar.Width);
+            charYMax = (int)(charPos.Y + currentChar.Height);
+
+            if(charPos.X + currentChar.Width > charXMax)
+            {
+                charXMax += 1;
+            }
+
+            if (charPos.Y + currentChar.Height > charYMax)
+            {
+                charYMax += 1;
+            }
+
             if (input.SpaceSing && !isJumping)
             {
                 velocity = -10;
